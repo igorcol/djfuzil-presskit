@@ -12,7 +12,7 @@ const Footer = () => {
 
             {/* CTA Comercial (Direita) */}
             <a
-                href="https://wa.me/5511999999999?text=Olá+Colombini,+vi+o+Dossiê+do+DJ+Fuzil+e+quero+iniciar+o+protocolo+para+meu+projeto."
+                href="https://wa.me/5515991093960?text=Olá+Colombini,+vi+o+Presskit+do+DJ+Fuzil+e+quero+fazer+um+orçamento+para+meu+projeto."
                 target="_blank"
                 className="group flex flex-col items-end gap-1 font-mono no-underline"
             >
