@@ -4,6 +4,7 @@ import ArtistRecommendation from "@/component/ArtistRecommendation";
 import AudioVault from "@/component/AudioVault";
 import ContactNode from "@/component/ContactNode";
 import FloatingPlayer from "@/component/FloatingPlayer";
+import Footer from "@/component/Footer";
 import HeroGrid from "@/component/HeroGrid";
 import SupportLog from "@/component/SupportLog";
 import VisualArchive from "@/component/VisualArchive";
@@ -64,11 +65,7 @@ export default function Home() {
       <ContactNode />
 
       {/* FOOTER_TECHNICAL_LOG */}
-      <footer className="bg-black p-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center font-mono text-[8px] opacity-30 uppercase tracking-[2px] gap-4 text-center">
-        <span>[STATUS]: SYSTEM_OPERATIONAL_2026</span>
-        <span>[ENCRYPTION]: BRUTALIST_CLEAN_V1</span>
-        <span>© UNDERGROUND_ARCHITECT // [NOME_DO_ARTISTA]</span>
-      </footer>
+      <Footer/>
 
     </main>
   );

@@ -33,7 +33,7 @@ export default function ArtistRecommendation() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-12">
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 bg-red-600 text-white px-3 py-1 text-[10px] font-black italic uppercase tracking-[0.2em]">
-                <Zap size={12} /> Spotlight_Project
+                <Zap size={12} /> RECOMENDAÇÃO DO ARTISTA
               </div>
               <h2 className="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter text-white">
                 &quot;VAIJOGA&quot; <br />

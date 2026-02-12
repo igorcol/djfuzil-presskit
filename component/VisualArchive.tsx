@@ -6,8 +6,8 @@ import { Eye, Download } from "lucide-react";
 const photos = [
   { id: "IMG_001", type: "PRESS_SHOT", size: "4.2MB", url: "/press-1.jpg" },
   { id: "IMG_002", type: "LIVE_ACTION", size: "8.1MB", url: "/press-2.jpg" },
-  { id: "IMG_003", type: "STUDIO_SESSION", size: "3.5MB", url: "/press-3.jpg" },
-  { id: "IMG_004", type: "STREET_LOG", size: "5.9MB", url: "/press-4.jpg" },
+  { id: "IMG_003", type: "TOMA_ESTA", size: "3.5MB", url: "/press-3.jpg" },
+  { id: "IMG_004", type: "RECEBA", size: "5.9MB", url: "/press-4.jpg" },
 ];
 
 export default function VisualArchive() {
@@ -16,7 +16,7 @@ export default function VisualArchive() {
       <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <h2 className="text-xl font-black italic tracking-tighter">[VISUAL_ASSETS_ARCHIVE]</h2>
-          <p className="text-[10px] opacity-50 uppercase">Capturas de sinal e documentação estética</p>
+          <p className="text-[10px] opacity-50 uppercase">Capturas, momentos e documentação estética</p>
         </div>
         <div className="flex gap-2">
           <button className="text-[10px] border border-white/20 px-3 py-1 hover:bg-white hover:text-black transition-all">

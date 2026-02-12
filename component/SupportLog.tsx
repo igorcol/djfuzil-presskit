@@ -23,7 +23,7 @@ const supports = [
   },
   { 
     id: "LOG_003",
-    artist: "----", 
+    artist: "DJ CAIOSVNTOS", 
     track: "DA FUNK (DA FONK REMIX)", 
     venue: "District 272 Millano", 
     video: "sups/sup-dafonk-millano.mp4",
@@ -120,7 +120,7 @@ export default function SupportLog() {
       <div className="mb-12 flex justify-between items-end">
         <div>
           <h2 className="text-xl font-black italic tracking-tighter text-white uppercase">[GLOBAL_SUPPORT_LOG]</h2>
-          <p className="text-[10px] text-red-600 font-mono uppercase tracking-[3px]">Impacto em pista / Decodificação de sinal</p>
+          <p className="text-[10px] text-red-600 font-mono uppercase tracking-[3px]">Suportes</p>
         </div>
         <div className="hidden md:block text-[8px] opacity-20 font-mono uppercase">
           Hover_to_unmute_signal

@@ -10,7 +10,7 @@ export default function ContactNode() {
         {Array.from({ length: 25 }).map((_, i) => (
           <div key={i} className="whitespace-nowrap">
             {Array.from({ length: 12 }).map((_, j) => (
-              <span key={j}>52.5200 N 13.4050 E // FUNK_INDUSTRIAL_SYSTEM_NODE_2026 // </span>
+              <span key={j}>52.5200 N 13.4050 E // INDUSTRIAL_SYSTEM_NODE_2026 // </span>
             ))}
           </div>
         ))}
@@ -29,8 +29,8 @@ export default function ContactNode() {
             </div>
             <div className="relative z-10">
               <span className="text-[10px] text-red-600 font-black tracking-[4px] uppercase mb-2 block">Visual_Feed</span>
-              <h3 className="text-3xl font-black italic uppercase tracking-tighter">Instagram_Archive</h3>
-              <p className="text-[10px] opacity-40 mt-2 uppercase">Acesso ao laboratório visual e rotina de tour.</p>
+              <h3 className="text-3xl font-black italic uppercase tracking-tighter">Instagram</h3>
+              <p className="text-[10px] opacity-40 mt-2 uppercase">Acesso ao dia a dia e rotina de tour.</p>
             </div>
             <ChevronRight className="group-hover:translate-x-2 transition-transform text-red-600" />
           </a>
@@ -45,8 +45,8 @@ export default function ContactNode() {
             </div>
             <div className="relative z-10">
               <span className="text-[10px] text-white/50 font-black tracking-[4px] uppercase mb-2 block">Documentation</span>
-              <h3 className="text-3xl font-black italic uppercase tracking-tighter">Full_Presskit_PDF</h3>
-              <p className="text-[10px] opacity-40 mt-2 uppercase">Dados técnicos, rider de palco e alta resolução.</p>
+              <h3 className="text-3xl font-black italic uppercase tracking-tighter">Full presskit</h3>
+              <p className="text-[10px] opacity-40 mt-2 uppercase">Dados técnicos, e mais detalhes.</p>
             </div>
             <ChevronRight className="group-hover:translate-x-2 transition-transform" />
           </a>
@@ -62,10 +62,10 @@ export default function ContactNode() {
                 <span className="text-[10px] tracking-[4px] uppercase">SECURE_CONNECTION_ESTABLISHED</span>
               </div>
               <h2 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase leading-[0.9] mb-8">
-                READY TO <br /> <span className="text-red-600 underline decoration-2 underline-offset-8">EXECUTE?</span>
+                VOCÊ ESTÁ <br /> <span className="text-red-600 underline decoration-2 underline-offset-8">PRONTO?</span>
               </h2>
               <p className="text-xs opacity-50 max-w-sm leading-relaxed uppercase font-mono">
-                Para propostas de booking, collabs e operações de larga escala, utilize os protocolos de frequência abaixo. Resposta média em 24h.
+                Para propostas de booking, collabs e operações de larga escala, utilize os meios de comunicação abaixo. Resposta média em 24h.
               </p>
             </div>
             
@@ -84,7 +84,7 @@ export default function ContactNode() {
                 <Smartphone className="group-hover:rotate-12 transition-transform" size={24} />
                 <div>
                   <span className="text-[9px] block opacity-50 font-black uppercase tracking-widest">Direct_Line</span>
-                  <span className="text-xl font-black tracking-tighter uppercase italic">WhatsApp_Protocol</span>
+                  <span className="text-xl font-black tracking-tighter uppercase italic">WhatsApp</span>
                 </div>
               </div>
               <Send size={20} className="opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -98,7 +98,7 @@ export default function ContactNode() {
                 <Globe className="group-hover:animate-spin-slow" size={24} />
                 <div>
                   <span className="text-[9px] block opacity-50 font-black uppercase tracking-widest">Transmission</span>
-                  <span className="text-xl font-black tracking-tighter uppercase italic">Official_Email</span>
+                  <span className="text-xl font-black tracking-tighter uppercase italic">Email</span>
                 </div>
               </div>
               <Send size={20} className="opacity-0 group-hover:opacity-100 transition-opacity" />

@@ -7,19 +7,19 @@ import { Play, Pause, BarChart3, ArrowUpRight } from "lucide-react";
 const tracks = [
   { 
     id: "01", 
-    title: "SISMICO_INDUSTRIAL", 
+    title: "DESTAQUE 1", 
     file: "/songs/TCHAU_PRA_NOS_ROMANTICOS.mp3", 
-    plays: "1.2M",
-    bpm: "145", 
-    genre: "HARD_FUNK"
+    plays: "50k",
+    bpm: "180", 
+    genre: "PORRADA"
   },
   { 
     id: "02", 
-    title: "SUB_GRAVE_DISTORT", 
+    title: "DESTAQUE 2", 
     file: "/songs/SUB_GRAVE.mp3",
-    plays: "850K",
+    plays: "15k",
     bpm: "138", 
-    genre: "INDUSTRIAL_TECH"
+    genre: "AQUELAS COISA NÉ"
   },
 ];
 
