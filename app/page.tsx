@@ -3,6 +3,7 @@
 import ArtistRecommendation from "@/component/ArtistRecommendation";
 import AudioVault from "@/component/AudioVault";
 import ContactNode from "@/component/ContactNode";
+import FloatingPlayer from "@/component/FloatingPlayer";
 import HeroGrid from "@/component/HeroGrid";
 import SupportLog from "@/component/SupportLog";
 import VisualArchive from "@/component/VisualArchive";
@@ -24,6 +25,7 @@ export default function Home() {
 
   return (
     <main className="bg-black min-h-screen selection:bg-red-600 selection:text-white">
+      <FloatingPlayer />
       
       {/* 00. SYSTEM_PROGRESS_BAR */}
       <motion.div 
