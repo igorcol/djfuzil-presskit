@@ -9,8 +9,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ARTISTA // [OFFICIAL_DOSSIER]",
-  description: "Terminal de Ativos de Alta Performance. Acesso restrito a labels e contratantes selecionados.",
+  title: "DJ FUZIL // PRESSKIT",
+  description: "DJ FUZIL // PRESKIT INTERATIVO",
   // Isso muda a cor da barra do navegador no mobile para total black
   themeColor: "#000000", 
 };
