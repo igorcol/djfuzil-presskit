@@ -22,7 +22,7 @@ export default function HeroGrid() {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700"
+          className="absolute inset-0 w-full h-full object-cover opacity-60"
         >
           <source src="/main-performance.mp4" type="video/mp4" />
         </video>
@@ -75,7 +75,7 @@ export default function HeroGrid() {
           </div>
           <div className="h-px bg-red-600/30 w-full" />
           <p className="text-[9px] opacity-50 uppercase leading-relaxed font-mono">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed lectus quis libero elementum porttitor. Nullam volutpat tempus risus id dignissim. Curabitur ut auctor quam, vel condimentum velit. Donec scelerisque tellus nec iaculis finibus. Morbi fringilla purus mollis dictum fermentum. Phasellus id erat tristique, bibendum ante non, blandit lacus. Vestibulum ornare ex eget massa tempor, a pellentesque justo ullamcorper.
+            Diretamente de Sorocaos 015 esse ai vem soltando as pedrada violenta toma toma
           </p>
         </div>
 

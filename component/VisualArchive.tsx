@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 "use client";
 import { motion } from "framer-motion";
-import { Eye, Download } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const photos = [
   { id: "IMG_001", type: "PRESS_SHOT", size: "4.2MB", url: "/press-1.jpg" },
@@ -11,60 +11,90 @@ const photos = [
 ];
 
 export default function VisualArchive() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+
+  // Ciclo automático de destaque (Scanner) [cite: 2025-06-25]
+  useEffect(() => {
+    if (isHovering) return; // Pausa o auto-scan se o mouse estiver em cima
+
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % photos.length);
+    }, 2000); // Troca a cada 2 segundos
+
+    return () => clearInterval(interval);
+  }, [isHovering]);
+
   return (
-    <section className="bg-black text-white p-6 md:p-10 font-mono border-t border-white/10">
+    <section className="bg-black text-white p-6 md:p-10 font-mono border-t border-white/10 overflow-hidden">
       <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <h2 className="text-xl font-black italic tracking-tighter">[VISUAL_ASSETS_ARCHIVE]</h2>
-          <p className="text-[10px] opacity-50 uppercase">Capturas, momentos e documentação estética</p>
+          <h2 className="text-xl font-black italic tracking-tighter uppercase">[VISUAL_ASSETS_ARCHIVE]</h2>
+          <p className="text-[10px] text-red-600 font-mono uppercase tracking-[3px]">Capturas, momentos e documentação estética</p>
         </div>
-        <div className="flex gap-2">
-          <button className="text-[10px] border border-white/20 px-3 py-1 hover:bg-white hover:text-black transition-all">
-            DOWNLOAD_ALL_ZIP
-          </button>
-        </div>
+        {/* <button className="text-[10px] border border-white/20 px-4 py-2 hover:bg-red-600 hover:border-red-600 transition-all font-black uppercase tracking-widest">
+          DOWNLOAD_ALL_ZIP
+        </button> */}
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {photos.map((photo, index) => (
-          <motion.div 
-            key={photo.id}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: index * 0.1 }}
-            className="group relative aspect-3/4 bg-[#111] overflow-hidden border border-white/5"
-          >
-            {/* Imagem com filtro Industrial */}
-            <div className="absolute inset-0 grayscale contrast-125 brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500">
-              <div className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url(${photo.url})` }} />
-            </div>
+      <div 
+        className="grid grid-cols-2 md:grid-cols-4 gap-4"
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        {photos.map((photo, index) => {
+          const isActive = activeIndex === index;
 
-            {/* Scanline Overlay no Hover */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-size-[100%_2px,3px_100%]" />
+          return (
+            <motion.div 
+              key={photo.id}
+              onMouseEnter={() => setActiveIndex(index)}
+              className={`relative aspect-3/4 overflow-hidden border transition-all duration-700 ${
+                isActive ? 'border-red-600 shadow-[0_0_20px_rgba(220,38,38,0.2)]' : 'border-white/5'
+              }`}
+            >
+              {/* Imagem com Filtro Dinâmico */}
+              <div className={`absolute inset-0 transition-all duration-700 ${
+                isActive ? 'grayscale-0 brightness-110 scale-105' : 'grayscale opacity-70 brightness-50 scale-100'
+              }`}>
+                <div 
+                  className="w-full h-full bg-cover bg-center" 
+                  style={{ backgroundImage: `url(${photo.url})` }} 
+                />
+              </div>
 
-            {/* Metadados Individuais */}
-            <div className="absolute bottom-0 left-0 right-0 p-3 bg-linear-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-              <div className="flex flex-col gap-1">
-                <span className="text-[9px] font-bold text-red-600">{photo.id} // {photo.type}</span>
-                <div className="flex justify-between items-center">
-                  <span className="text-[8px] opacity-70 italic">SIZE: {photo.size}</span>
-                  <div className="flex gap-2">
-                    <button title="View"> <Eye size={14} className="hover:text-red-600 cursor-pointer" /> </button>
-                    <button title="Download"> <Download size={14} className="hover:text-red-600 cursor-pointer" /> </button>
+              {/* Scanline Overlay (Ativo no destaque) */}
+              {isActive && (
+                <div className="absolute inset-0 pointer-events-none z-10 opacity-20 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-size-[100%_2px,3px_100%]" />
+              )}
+
+              {/* HUD de Dados Individual */}
+              <div className={`absolute bottom-0 left-0 right-0 p-3 bg-black/80 backdrop-blur-sm border-t border-white/10 transition-transform duration-500 z-20 ${
+                isActive ? 'translate-y-0' : 'translate-y-full'
+              }`}>
+                <div className="flex flex-col gap-1">
+                  <span className="text-[9px] font-black text-red-600 uppercase tracking-tighter">
+                    {photo.id} // {photo.type} 
+                  </span>
+                  <div className="flex justify-between items-center">
+                    <span className="text-[8px] opacity-70 font-mono italic uppercase">Weight: {photo.size}</span>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Marcadores de Canto (Crosshair) */}
-            <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-white/30" />
-            <div className="absolute top-2 right-2 w-2 h-2 border-t border-r border-white/30" />
-          </motion.div>
-        ))}
+              {/* Corner Markers (Aparecem no destaque) */}
+              <div className={`absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-red-600 transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-0'}`} />
+              <div className={`absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-red-600 transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-0'}`} />
+            </motion.div>
+          );
+        })}
       </div>
 
-      {/* Grid Decorativo de fundo para preencher espaço se necessário */}
-      <div className="mt-6 h-px w-full bg-linear-to-r from-transparent via-white/20 to-transparent" />
+      <div className="mt-8 flex justify-between items-center opacity-20 font-mono text-[7px] uppercase tracking-[4px]">
+        <span>Visual_Buffer_Loaded</span>
+        <div className="h-px flex-1 mx-4 bg-white/20" />
+        <span>Signal_Sync_Active</span>
+      </div>
     </section>
   );
 }
